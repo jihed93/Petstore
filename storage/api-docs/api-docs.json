@@ -1,0 +1,212 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your super  ApplicationAPI",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/pet/{id}": {
+            "get": {
+                "operationId": "App\\Http\\Controllers\\PetController::findById",
+                "description": "Returns a  pet",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Pet id",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                
+                "tags": [
+                    "Pet"
+                ],
+                "responses": {
+                    
+                    "200": {
+                        "description": "find a pet."
+                    }
+                   
+  
+                    
+                }
+            }
+           
+        },
+        "/api/pet/Add": {
+            "post": {
+                "operationId": "App\\Http\\Controllers\\PetController::addNewPet",
+                "description": "Add new  pet",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Pet object that needs to be added to the store",
+                        "required": true,
+                        "type": "object"
+                    }
+                ],
+                
+                "tags": [
+                    "Pet"
+                ],
+                "responses": {
+                    
+                    "200": {
+                        "description": "Add a pet."
+                    }
+                   
+                       
+                    
+                }
+            }
+           
+        },
+        "/api/pet/deletePet/{id}": {
+            "delete": {
+                "operationId": "App\\Http\\Controllers\\PetController::deletePetById",
+                "description": "Delete a  pet",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Pet id",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                
+                "tags": [
+                    "Pet"
+                ],
+                "responses": {
+                    
+                    "200": {
+                        "description": "delete a pet."
+                    }
+                   
+  
+                    
+                }
+            }
+           
+        },
+        "/api/pet/uploadPhoto/{id}": {
+            "post": {
+                "operationId": "App\\Http\\Controllers\\PetController::uploadImage",
+                "description": "upload a pet photo",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Pet id",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "image",
+                        "in": "formData",
+                        "description": "file",
+                        "required": true,
+                        "type": "file"
+                    }
+
+                ],
+                
+                "tags": [
+                    "Pet"
+                ],
+                "responses": {
+                    
+                    "200": {
+                        "description": "image."
+                    }
+                   
+  
+                    
+                }
+            }
+           
+        },
+        "/api/register": {
+            "post": {
+                "operationId": "App\\Http\\Controllers\\JwtAuthController::register",
+                "description": "User registration",
+                "parameters": [
+                    {
+                        "name": "user_name",
+                        "in": "formData",
+                        "description": "User name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "description": "User email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "description": "password required ",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Authentication"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "operationId": "App\\Http\\Controllers\\JwtAuthController::login",
+                "description": "User login",
+                "consumes" :"application/json",
+                "produces" :"application/json",
+                "type":"object" ,
+                
+                
+                "parameters": [
+                    
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "description": "User email",
+                        "required": true,
+                        "type": "string"
+                        
+                      },
+                      {
+                        "name": "password",
+                        "in": "formData",
+                        "description": "User password",
+                        "required": true,
+                        "type": "string"
+                        
+                      }
+
+                ],
+                "tags": [
+                    "Authentication"
+                ],
+                "responses": {
+                    
+                    "200": {
+                        
+            
+                        "description": "success"
+                    }
+                }
+            }
+        }
+    }
+}
