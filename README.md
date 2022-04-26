@@ -16,7 +16,7 @@ with database seeder and factories
 ![swagger](https://user-images.githubusercontent.com/53900217/165316492-a6369100-9e13-4946-9dad-847368bc1baa.PNG)
 
 with api-docs.json
-##Jwt authentication
+## Jwt authentication
 ![jwt](https://user-images.githubusercontent.com/53900217/165316822-baf35310-31aa-4ccd-b528-a2775f330ce5.PNG)
-##Github
+## Github
 https://github.com/jihed93/Petstore/tree/master
